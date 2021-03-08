@@ -7,7 +7,20 @@
     <context:component-scan base-package="de.pillepelle.database.jpa"/>
 
     <tx:annotation-driven/>
+    
+	<!--  ###### dataSource Start #################  -->
 
+	<!-- ALTERNATIVE_H2 database -> legt 2 Dateien unter src/main/resources/h2_database an -->
+	<!-- 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+        >
+        <property name="driverClassName" value="org.h2.Driver" />
+        <property name="url" value="jdbc:h2:./src/main/resources/h2_database/testDB" />
+        <property name="username" value="embedded" />
+        <property name="password" value="embedded" />
+    </bean>
+     -->
+	 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -16,6 +29,9 @@
 		<property name="username" value="peter" />
 		<property name="password" value="root" />
 	</bean>
+	
+
+	<!--  ###### dataSource End #################  -->
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityFactory"/>
@@ -30,6 +46,8 @@
         <property name="jpaProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <!--  ALTERNATIVE_H2 H2 dialect -->
+                <!-- <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>   -->
                 <prop key="hibernate.show_sql">true</prop>
                 <!--  irgendwann ersetzen durch sinnvolle Update Scripts -->
                 <prop key="hibernate.hbm2ddl.auto">create-drop</prop> 

@@ -1,0 +1,12 @@
+03-08 17:00:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabelle "OWNER_CAR" nicht gefunden
+Table "OWNER_CAR" not found; SQL statement:
+alter table OWNER_CAR drop constraint FK_q07thxfnael9g2xr9h4ael9e8 [42102-181]
+03-08 17:00:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabelle "OWNER_CAR" nicht gefunden
+Table "OWNER_CAR" not found; SQL statement:
+alter table OWNER_CAR drop constraint FK_kc2doobul6ug6pc2943tpto88 [42102-181]
+03-08 17:00:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabelle "WHEELENTITY" nicht gefunden
+Table "WHEELENTITY" not found; SQL statement:
+alter table WheelEntity drop constraint FK_l3driliqwv8p6u2fux82jrjvh [42102-181]
